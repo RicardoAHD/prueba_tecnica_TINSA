@@ -1,3 +1,5 @@
+Este proyecto es una herramienta útil para analizar datos contenidos en archivos CSV y presentar los resultados de manera clara y concisa en un informe PDF.
+
 Archivos
 1. archivo_principal.py
 Este archivo es el núcleo del proyecto y se encarga de realizar el análisis de los datos contenidos en un archivo CSV proporcionado. A través de varias funciones, lee el archivo CSV, realiza cálculos y análisis estadísticos, y genera un informe en formato PDF llamado "analisis_PDF.pdf". Este informe incluye los resultados del análisis y conclusiones relevantes.
