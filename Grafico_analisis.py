@@ -132,3 +132,17 @@ plt.xticks(rotation=90)
 plt.legend()
 plt.grid(True)
 plt.show()
+
+_____________________________________________________________________________________________________________________________________
+#valor medio de las propiedades a lo largo del tiempo
+
+data['FECHA'] = pd.to_datetime(data['FECHA'])
+valor_medio_mensual = data.groupby(data['FECHA'].dt.to_period('M')).agg({'VALOR':'mean'}).reset_index()
+valor_medio_mensual['FECHA'] = valor_medio_mensual['FECHA'].dt.to_timestamp()
+plt.figure(figsize=(12, 6))
+sns.lineplot(x='FECHA', y='VALOR', data=valor_medio_mensual)
+plt.title('Tendencia del Valor Medio de las Propiedades a lo largo del Tiempo')
+plt.xlabel('Fecha')
+plt.ylabel('Valor Medio (€)')
+plt.xticks(rotation=45)
+plt.show()
